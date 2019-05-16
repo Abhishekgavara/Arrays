@@ -1,0 +1,46 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	    int a[]={10,22,5,75,65,80};
+		System.out.println(maxprofit(a));
+	}
+	static int maxprofit(int[] a){
+	    int n=a.length;
+	    int mpf=-1,pf;
+	    for(int i=1;i<n;i++){
+	        
+	        pf=profit(a,0,i)+profit(a,i+1,n-1);
+	        
+	        if (pf>mpf)
+	        mpf=pf;
+	    }
+	    return mpf;
+	}
+	static int profit(int[] a,int s,int e){
+	    
+	    int mdf;
+	    int diff=0;
+	    int largest=a[e];
+	    for (int i=e-1;i>=s;i--){
+	        if(a[i]>largest)
+	            a[i]=largest;
+else{
+    mdf=largest-a[i];
+    if(mdf>diff)
+    diff=mdf;
+    
+    
+}	        
+	        
+	    }
+	    
+	    
+	    return diff;
+	    
+	    
+	    
+	}
+}
