@@ -1,0 +1,30 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class Kdn {
+    
+	public static void main (String[] args) {
+	    int[] a={-2,-3,4,-1,-2,1,5,-3};
+	    int n=a.length;
+		System.out.println(Sumcontig(a,n));
+	}
+	
+	public static int Sumcontig(int[] b,int n){
+	    int maxsofar=0,maxendhere=0;
+	    for(int i=0;i<n;i++){
+	        maxendhere=maxendhere+b[i];
+	        
+	        if(maxendhere<0)
+	        maxendhere=0;
+	        if(maxendhere>maxsofar)
+	        maxsofar=maxendhere;
+	        
+	        
+	    }
+	    return maxsofar;
+	    
+	    
+	    
+	}
+}
