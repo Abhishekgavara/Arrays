@@ -1,0 +1,33 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    
+    static int MaxsubArray(int a[],int n,int k){
+        int sum=0;
+        int maxsum=0;
+        int mi=0;
+        for(int i=0;i<k;i++){
+            sum =sum+a[i];
+            maxsum=sum;
+        }
+        for(int i=k;i<n;i++){
+            sum=sum-a[i-k]+a[i];
+            if(sum>maxsum){
+                maxsum=sum;
+                mi=i-k+1;
+            }
+            
+        }
+        
+        return mi;
+    }
+	public static void main (String[] args) {
+	    int a[]={1, 12, -5, -6, 50, 3};
+	    int n=a.length;
+	    int k=4;
+	    int z=MaxsubArray(a,n,4);
+	    System.out.println(z);
+	}
+}
